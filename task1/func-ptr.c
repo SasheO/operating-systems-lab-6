@@ -25,8 +25,15 @@ typedef int (*Comparer) (const void *a, const void *b);
 int my_comparer(const void *this, const void *that)
 {
 	//TODO: IMPLEMENT ME!
-	return 0;
+  int * first = (int*) this;
+  int * second = (int*) that;
+	return first-second;
 }
+
+/*
+create functions for each operation and put them all in an array of array pointers
+
+*/
 
 int main(int argc, char *argv[])
 {
