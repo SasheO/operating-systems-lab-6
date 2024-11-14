@@ -25,15 +25,20 @@ typedef int (*Comparer) (const void *a, const void *b);
 int my_comparer(const void *this, const void *that)
 {
 	//TODO: IMPLEMENT ME!
-  int * first = (int*) this;
-  int * second = (int*) that;
-	return first-second;
+  Process first = *((Process *) this);
+  Process second = *((Process *) that);
+    if (first.priority<second.priority){
+      return 1;
+    }
+		else if (first.priority==second.priority){
+			if (first.arrival_time>second.arrival_time){
+				return 1;
+			}
+		}
+		
+		return 0;
+		
 }
-
-/*
-create functions for each operation and put them all in an array of array pointers
-
-*/
 
 int main(int argc, char *argv[])
 {
